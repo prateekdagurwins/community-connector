@@ -5,7 +5,7 @@ import { validators } from '../../middleware/index.js';
 import auth from '../../middleware/auth/index.js';
 
 const userRouter = express.Router();
-
+//routers
  userRouter.post("/users/add", validators("addUser"), SignUp);
  userRouter.post('/users/login', validators("loginUser"), login);
  userRouter.post('/users/logout', auth, logout);
