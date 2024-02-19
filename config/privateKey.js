@@ -1,0 +1,20 @@
+import dotenv from "dotenv";
+dotenv.config();
+
+let {
+    DB_STRING_LOCAL,
+    PORT,
+    ACCESS_TOKEN_SECRET,
+    REDISH_SESSION_SECRET,
+    REDISH_HOST,
+    REDISH_PORT
+} = process.env;
+
+export const privateKey = {
+    'DB_STRING_DEV': DB_STRING_LOCAL,
+    'PORT':PORT,
+    "ACCESS_TOKEN_SECRET": ACCESS_TOKEN_SECRET,
+    "REDISH_SESSION_SECRET": REDISH_SESSION_SECRET,
+    "REDISH_HOST": REDISH_HOST,
+    "REDISH_PORT": REDISH_PORT
+}
