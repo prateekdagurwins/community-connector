@@ -5,7 +5,7 @@ import { catchAsyncAction, makeResponse, responseMessages, statusCodes } from '.
 import { addUser, findAllUser, findUserAndDelete, findUserAndUpdate, getUser, getUserCount } from '../../services/user/index.js';
 import { createAccessToken } from '../../services/common/index.js';
 import { filterFieldsInUsersResponse } from '../../utilities/userMapper/index.js';
-import { redisClient } from '../../loader/index.js';
+// import { redisClient } from '../../loader/index.js';
  const saltRounds = 10;
 
 const userRouter = Router();
@@ -67,10 +67,10 @@ export const login = catchAsyncAction(async (req, res) => {
       }
       if (user) {
        // Invalidate existing sessions for the user
-        redisClient.del(`user:${user._id}`);
+        // redisClient.del(`user:${user._id}`);
       //Creating access token.
       const accesstoken = createAccessToken({ id: user._id });
-      const redisCon = await redisClient.set(`user:${user._id}`, accesstoken);
+      // const redisCon = await redisClient.set(`user:${user._id}`, accesstoken);
       if(redisCon === "OK"){
         return makeResponse(res, SUCCESS, true, USER_LOGIN, {accessToken: accesstoken});
       }

@@ -1,6 +1,6 @@
 import jwt from "jsonwebtoken"
 import { makeResponse, statusCodes, responseMessages} from "../../utilities/index.js";
-import { redisClient } from "../../loader/index.js";
+// import { redisClient } from "../../loader/index.js";
 
 //Response Status code
 const {AUTH_ERROR} = statusCodes;
